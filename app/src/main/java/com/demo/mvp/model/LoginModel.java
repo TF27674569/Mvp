@@ -1,4 +1,4 @@
-package com.demo.model;
+package com.demo.mvp.model;
 
 
 import com.mvp.MvpModel;

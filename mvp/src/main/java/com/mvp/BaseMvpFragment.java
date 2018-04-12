@@ -20,7 +20,7 @@ public abstract class BaseMvpFragment<P extends BasePresenter>  extends Fragment
         if (mPresenter == null) {
             mPresenter = createPresenter();
         }
-        if (mPresenter == null) {
+        if (mPresenter != null) {
             mPresenter.attachView(createMvpView());
         }
     }

@@ -1,4 +1,4 @@
-package com.demo.view;
+package com.demo.mvp.view.mvpinterface;
 
 import com.mvp.MvpView;
 

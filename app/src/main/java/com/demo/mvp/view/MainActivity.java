@@ -1,22 +1,24 @@
-package com.demo;
+package com.demo.mvp.view;
 
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.widget.Toast;
 
+import com.demo.R;
+import com.demo.base.BaseActivity;
 import com.demo.data.UserInfoBean;
-import com.demo.model.LoginModel;
-import com.demo.presenter.LoginPresenter;
-import com.demo.view.LoginView;
+import com.demo.mvp.presenter.LoginPresenter;
+import com.demo.mvp.view.mvpinterface.LoginView;
 import com.mvp.BaseMvpActivity;
 
-public class MainActivity extends BaseMvpActivity<LoginPresenter> implements LoginView<UserInfoBean> {
+public class MainActivity extends BaseActivity<LoginPresenter> implements LoginView<UserInfoBean> {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
         getPresenter().getLogin();
     }
 

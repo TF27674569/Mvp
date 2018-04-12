@@ -22,7 +22,7 @@ public abstract class BaseMvpActivity<P extends BasePresenter> extends AppCompat
         if (mPresenter == null) {
             mPresenter = createPresenter();
         }
-        if (mPresenter == null) {
+        if (mPresenter != null) {
             mPresenter.attachView(createMvpView());
         }
     }

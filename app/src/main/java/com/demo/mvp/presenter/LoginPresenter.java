@@ -1,10 +1,9 @@
-package com.demo.presenter;
+package com.demo.mvp.presenter;
 
 import com.demo.data.UserInfoBean;
-import com.demo.model.LoginModel;
-import com.demo.view.LoginView;
+import com.demo.mvp.model.LoginModel;
+import com.demo.mvp.view.mvpinterface.LoginView;
 import com.mvp.BasePresenter;
-import com.mvp.MvpView;
 
 /**
  * Description :
