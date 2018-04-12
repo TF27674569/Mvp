@@ -1,24 +1,22 @@
 package com.mvp;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Context;
+import android.support.v4.app.Fragment;
 
 /**
- * Description : Activity 抽象层
- * <p/> T 为解析的数据返回类型
+ * Description :
+ * <p/>
  * Created : TIAN FENG
- * Date : 2018/4/11
+ * Date : 2018/4/12
  * Email : 27674569@qq.com
  * Version : 1.0
  */
-public abstract class BaseMvpActivity<P extends BasePresenter> extends AppCompatActivity {
-
+public abstract class BaseMvpFragment<P extends BasePresenter>  extends Fragment{
     private P mPresenter;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onAttach(Context context) {
+        super.onAttach(context);
         if (mPresenter == null) {
             mPresenter = createPresenter();
         }
@@ -31,7 +29,6 @@ public abstract class BaseMvpActivity<P extends BasePresenter> extends AppCompat
      * 创建Presenter
      */
     protected abstract P createPresenter();
-
 
     /**
      * 创建mvpview
@@ -46,7 +43,7 @@ public abstract class BaseMvpActivity<P extends BasePresenter> extends AppCompat
     }
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
         if (mPresenter != null) {
             mPresenter.detachView();
