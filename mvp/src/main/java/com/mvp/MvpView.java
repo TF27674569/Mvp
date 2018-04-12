@@ -14,6 +14,8 @@ public interface MvpView<T> {
 
     void onSuccess(T result);
 
-    void onError();
+    void onError(String message);
+
+    void onComplete();
 
 }

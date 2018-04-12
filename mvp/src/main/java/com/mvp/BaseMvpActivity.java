@@ -12,7 +12,7 @@ import android.support.v7.app.AppCompatActivity;
  * Email : 27674569@qq.com
  * Version : 1.0
  */
-public abstract class BaseMvpActivity<P extends BasePresenter, M extends MvpModel,T> extends AppCompatActivity implements MvpView<T>{
+public abstract class BaseMvpActivity<P extends BasePresenter> extends AppCompatActivity {
 
     private P mPresenter;
 
@@ -22,13 +22,24 @@ public abstract class BaseMvpActivity<P extends BasePresenter, M extends MvpMode
         if (mPresenter == null) {
             mPresenter = createPresenter();
         }
-        mPresenter.attachView(this);
+        mPresenter.attachView(createMvpView());
     }
 
     /**
      * 创建Presenter
      */
     protected abstract P createPresenter();
+
+
+    /**
+     * 创建mvpview
+     */
+    protected abstract MvpView createMvpView();
+
+
+    protected P getPresenter(){
+        return mPresenter;
+    }
 
     @Override
     protected void onDestroy() {

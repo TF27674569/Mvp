@@ -2,6 +2,7 @@ package com.demo.presenter;
 
 import com.demo.data.UserInfoBean;
 import com.demo.model.LoginModel;
+import com.demo.view.LoginView;
 import com.mvp.BasePresenter;
 import com.mvp.MvpView;
 
@@ -13,5 +14,10 @@ import com.mvp.MvpView;
  * Email : 27674569@qq.com
  * Version : 1.0
  */
-public class LoginPresenter extends BasePresenter<MvpView<UserInfoBean>,LoginModel> {
+public class LoginPresenter extends BasePresenter<LoginView<UserInfoBean>,LoginModel> {
+
+    public void getLogin(){
+        getView().onSuccess(model.getLogin());
+    }
+
 }

@@ -12,4 +12,8 @@ import com.mvp.MvpModel;
  * Version : 1.0
  */
 public class LoginModel implements MvpModel {
+
+    public String getLogin(){
+        return "1265165161561";
+    }
 }
